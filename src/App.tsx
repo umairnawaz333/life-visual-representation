@@ -59,7 +59,7 @@ function App() {
           <option value="static">Static Life Tracker</option>
         </select> */}
 
-        <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+        <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
           <label>
             Date of Birth:
             <input
@@ -69,7 +69,7 @@ function App() {
               style={{ marginLeft: "10px", padding: "5px" }}
             />
           </label>
-          <label>
+         <div style={{display: 'flex', flexDirection: 'column'}}> <label>
             Expected Age:
             <input
               type="text"
@@ -78,11 +78,24 @@ function App() {
               style={{ marginLeft: "10px", padding: "5px" }}
             />
           </label>
+          <div
+            id="age-description"
+            style={{
+              fontSize: "12px",
+              color: "#666",
+              marginTop: "4px",
+              marginLeft: "10px",
+              alignSelf: 'end'
+            }}
+          >
+            Enter age between 1 and 120 years
+          </div>
+          </div>
         </div>
       </div>
 
       <div style={{ flex: 1 }}>
-      <LifeTracker dob={dob} expectedAge={expectedAge} />
+        <LifeTracker dob={dob} expectedAge={expectedAge} />
         {/* {selectedPage !== "animated" ? (
           <LifeTracker dob={dob} expectedAge={expectedAge} />
         ) : (
